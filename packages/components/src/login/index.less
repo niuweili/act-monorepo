@@ -1,0 +1,132 @@
+.login {
+  width: 290px;
+  height: 230.5px;
+  
+    background: url(./assets/login_bg.png) no-repeat 100% / 100%;
+    padding: 46px 0 0 16px;
+
+    :deep(.van-search) {
+        height: 32px;
+        line-height: 32px;
+        background: linear-gradient(
+            90deg,
+            rgba(255, 223, 244, 0.9) 0%,
+            rgba(255, 255, 255, 0.63) 55.21%,
+            rgba(202, 236, 254, 0.9) 100%
+        );
+        border: 1px solid #ffffff;
+        border-radius: 16px;
+
+        box-sizing: border-box;
+        &.user {
+          width: 257px;
+            padding: 0 17px 0 53px;
+        }
+        &.phone {
+            width: 257px;
+            padding: 0 17px 0 53px;
+        }
+        &.code {
+            width: 156px;
+            padding: 0 17px 0 10px;
+        }
+        .van-search__content {
+            background: none;
+            padding-left: 0;
+        }
+        .van-field__control {
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 16px;
+            color: #000;
+            opacity: 0.5;
+        }
+        .van-icon {
+            display: none;
+        }
+
+        input::-webkit-input-placeholder {
+            /* WebKit browsers */
+            color: #887aba;
+        }
+        input:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: #887aba;
+        }
+        input::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: #887aba;
+        }
+        input:-ms-input-placeholder {
+            /* Internet Explorer 10+ */
+            color: #887aba;
+        }
+    }
+    > .user-id {
+        margin-bottom: 11px;
+        position: relative;
+        > .suffix {
+          // height: 32px;
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 12px;
+          line-height: 18px;
+          color: #5127ab;
+          .line {
+              margin-left: 9px;
+          }
+      }
+    }
+    > .phone {
+        position: relative;
+        > .suffix {
+            // height: 32px;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            line-height: 18px;
+            color: #5127ab;
+            .line {
+                margin-left: 9px;
+            }
+        }
+    }
+    > .code-box {
+        display: flex;
+        align-items: center;
+        margin-top: 11px;
+        width: 257px;
+        justify-content: space-between;
+        .verify {
+            width: 89px;
+            height: 26px;
+            line-height: 26px;
+            background: linear-gradient(
+                    180deg,
+                    #f4afff 0%,
+                    #d27fff 15.1%,
+                    #806eff 72.92%,
+                    #58a5ff 100%
+                ),
+                linear-gradient(180deg, #00b99c 0%, #00adb8 100%);
+            border: 1px solid #f8ffd0;
+            border-radius: 36px;
+            font-weight: 800;
+            font-size: 13px;
+            color: #ffffff;
+            text-shadow: 0px 0.5px 0px #024b00;
+            text-align: center;
+        }
+    }
+
+    > .button {
+        width: 109.04px;
+        height: 32px;
+        background: url(./assets/login_button.png) no-repeat 100% / 100%;
+        margin: 15px auto 0;
+    }
+}

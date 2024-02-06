@@ -1,0 +1,111 @@
+.jumps {
+    height: 100vh;
+}
+
+.duck {
+    height: 616px;
+}
+
+.luck {
+    height: 606px;
+}
+
+.badge {
+    width: 29px;
+    background: rgba(43, 59, 117, 0.17);
+    border-radius: 0 12px 12px 0;
+    padding: 5px 0 5px 0;
+
+    &_mask {
+        width: 100vw;
+        position: fixed;
+        z-index: 1000;
+        bottom: 0;
+    }
+
+    &_list {
+        &_item {
+            width: 45px;
+            height: 50px;
+            margin-bottom: 5px;
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            .filter {
+                filter: grayscale(1);
+                -webkit-filter: grayscale(1);
+            }
+
+            &_small {
+                width: 45px;
+                height: auto;
+            }
+
+            .anm {
+                left: 10px;
+                opacity: 1;
+                transition: all .2s ease-in-out;
+                z-index: 10;
+            }
+
+            &_big {
+                width: 180px;
+                min-height: 66px;
+                background: rgba(26, 61, 160, 0.56);
+                box-shadow: inset 0px -0.5px 0px rgba(255, 255, 255, 0.72), inset 0px 0.5px 0px rgba(255, 255, 255, 0.35);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                position: absolute;
+                left: -180px;
+                opacity: 0;
+                transition: all .2s ease-in-out;
+                padding: 5px 12px 10px 0;
+
+
+                &_left {
+                    img {
+                        width: 55px;
+                        height: auto;
+                        margin-left: 6px;
+                    }
+
+                }
+
+                &_right {
+                    margin-left: 6px;
+                    color: #C7FFF8;
+
+                    p {
+                        line-height: 13px;
+                    }
+
+                    &_name {
+                        font-weight: bold;
+                        span {
+                            font-size: 21px;
+                            zoom: .5;
+                        }
+                    }
+
+                    &_level {
+                        span {
+                            font-size: 20px;
+                            zoom: .5;
+                        }
+                    }
+
+                    &_desc {
+                        span {
+                            font-size: 20px;
+                            zoom: .5;
+                            line-height: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
