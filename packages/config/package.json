@@ -1,0 +1,15 @@
+{
+    "name": "@skr/act-config",
+    "version": "0.0.1",
+    "license": "MIT",
+    "main": "./lib/vue.config.js",
+    "module": "./lib/vue.config.js",
+    "type": "module",
+    "dependencies": {
+        "autoprefixer": "^10.4.17",
+        "postcss-px-to-viewport": "^1.1.1",
+        "unplugin-auto-import": "^0.17.5",
+        "unplugin-vue-components": "^0.26.0",
+        "vconsole-webpack-plugin": "^1.8.0"
+    }
+}

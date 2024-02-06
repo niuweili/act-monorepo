@@ -1,0 +1,6 @@
+{
+    "name": "@skr/act-service",
+    "version": "0.0.1",
+    "license": "MIT",
+    "main": "./lib/request.js"
+}
