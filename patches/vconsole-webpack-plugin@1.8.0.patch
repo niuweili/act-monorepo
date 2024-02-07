@@ -1,0 +1,13 @@
+diff --git a/index.js b/index.js
+index b24a2d8dafde3a35b48cbfe3fb6fb765e13223ff..8b42f4338f24f843ece1fc589a2d671fc7e54e1f 100644
+--- a/index.js
++++ b/index.js
+@@ -24,7 +24,7 @@ function vConsolePlugin(options) {
+ vConsolePlugin.prototype.apply = function(compiler) {
+     const enable = this.options.enable;
+     let pathVconsole = 'vconsole-webpack-plugin/src/vconsole.js';
+-    const _root = module.parent.paths.find(item => { // eslint-disable-line no-unused-vars
++    const _root = require.main.paths.find(item => { // eslint-disable-line no-unused-vars
+         let tmpPathVconsole = path.join(item, 'vconsole-webpack-plugin/src/vconsole.js');
+         if (fs.existsSync(item) && fs.existsSync(tmpPathVconsole)) {
+             pathVconsole = tmpPathVconsole;

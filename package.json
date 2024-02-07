@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node scripts/index.js build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chalk": "4.1.2",
+    "commander": "^12.0.0",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "shelljs": "^0.8.5",
+    "vue": "^3.2.13",
+    "wsrun": "^5.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -20,5 +24,10 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "vconsole-webpack-plugin@1.8.0": "patches/vconsole-webpack-plugin@1.8.0.patch"
+    }
   }
 }

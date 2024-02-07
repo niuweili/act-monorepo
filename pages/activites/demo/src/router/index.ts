@@ -19,8 +19,8 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
+  history: createWebHistory("/demo"),
   routes,
-  history: createWebHistory("/"),
 });
 
 export default router;

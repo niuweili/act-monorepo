@@ -24,6 +24,13 @@
         "scripthost"
       ]
     },
+    "include": [
+      "pages/**/*.ts",
+      "pages/**/*.vue",
+      "packages/**/*.ts",
+      "packages/**/*.vue",
+      "./auto-imports.d.ts" 
+    ],
     "exclude": [
       "node_modules"
     ]
