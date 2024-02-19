@@ -4,7 +4,7 @@
  * 一般不需要用户进行修改
  */
 /* eslint-disable */
-export default (function (global, factory) {
+(function (global, factory) {
     'use strict';
     if (typeof module === 'object' && typeof module.exports === 'object') {
         // CommonJS

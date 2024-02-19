@@ -1,5 +1,11 @@
 {
     "name": "@skr/act-utils",
     "version": "0.0.1",
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+        "@skr/act-service": "workspace:^",
+        "blueimp-md5": "^2.19.0",
+        "js-base64": "^3.7.6",
+        "lottie-web": "^5.12.2"
+    }
 }

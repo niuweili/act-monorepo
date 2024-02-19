@@ -12,7 +12,6 @@ function buildPages(opts) {
     //     shell.exit(1);
     // }
     const pCmd = opts.p ? `-p ${opts.p}` : '';
-    console.log(`npx wsrun -m ${pCmd} -r --stages ${command}`)
     const buildRes = shell.exec(`npx wsrun -m ${pCmd} -r --stages ${command}`, {
         cwd: PROJECT_ROOT,
     });

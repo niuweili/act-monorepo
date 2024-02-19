@@ -2,5 +2,9 @@
     "name": "@skr/act-service",
     "version": "0.0.1",
     "license": "MIT",
-    "main": "./lib/request.js"
+    "main": "./lib/request.js",
+    "dependencies": {
+        "@skr/act-utils": "workspace:^",
+        "axios": "^1.6.7"
+    }
 }

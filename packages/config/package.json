@@ -9,7 +9,10 @@
         "autoprefixer": "^10.4.17",
         "postcss-px-to-viewport-8-plugin": "^1.2.3",
         "unplugin-auto-import": "^0.17.5",
-        "unplugin-vue-components": "^0.26.0",
         "vconsole-webpack-plugin": "^1.8.0"
+    },
+    "devDependencies": {
+        "@vant/auto-import-resolver": "^1.0.2",
+        "unplugin-vue-components": "^0.26.0"
     }
 }

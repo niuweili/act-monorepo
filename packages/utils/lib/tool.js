@@ -1,11 +1,11 @@
 import { onBeforeUpdate, shallowRef } from 'vue';
 import lottie from 'lottie-web';
-import native, { callJsRegister } from './lib/native';
+import native, { callJsRegister } from './native';
 import { Base64 } from 'js-base64'; // 引入
-import 'vant/es/dialog/style';
+// import 'vant/es/dialog/style';
 import md5 from 'blueimp-md5';
-import { Dialog } from 'vant';
-import request from '@/service/request';
+// import { Dialog } from 'vant';
+import request from '@skr/act-service';
 
 const script = document.createElement('script');
 script.src = 'https://o.alicdn.com/captcha-frontend/aliyunFP/fp.min.js';
@@ -611,11 +611,11 @@ export const isLocalStorageAvailable = () => {
         localStorage.removeItem(test);
         return;
     } catch (e) {
-        Dialog.alert({
-            message: '请确保浏览器权限设置中，阻止cookie写入权限为关闭状态后重新进入此页面～'
-        }).then(() => {
-            // on close
-        });
+        // Dialog.alert({
+        //     message: '请确保浏览器权限设置中，阻止cookie写入权限为关闭状态后重新进入此页面～'
+        // }).then(() => {
+        //     // on close
+        // });
         return false;
     }
 };
@@ -708,5 +708,29 @@ export const buryingpoint = (pointName, action, otherParams) => {
         console.log(err);
     }
 };
-
+export const testBuryingpoint = (pointName, action, otherParams) => {
+    const signData = {
+        appSecret: 'skr2020',
+        pointName,
+        action,
+        subjectID: otherParams.subjectID
+    };
+    const sign = buryMd5Sign(signData);
+    const params = {
+        url: '/v1/msbdata/upload-data',
+        method: 'post',
+        data: {
+            pointName,
+            action,
+            // subjectID: getUrlParam('userID'),
+            sign,
+            ...otherParams
+        }
+    };
+    try {
+        request(params, false, false);
+    } catch (err) {
+        console.log(err);
+    }
+};
 export const getUUID = () => Date.now() + Math.random();

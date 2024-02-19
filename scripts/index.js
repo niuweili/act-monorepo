@@ -1,13 +1,15 @@
 const { program } = require('commander');
 const chalk = require('chalk');
 const { build } = require('./build');
-const opts = program.opts();
+
 program
     .version('0.0.1')
     .option('-p, --p <project>', '要build的project name')
     .option('-a, --all', '全量build')
     .option('-local, --local', '是否是本地build')
     .parse(process.argv);
+
+const opts = program.opts();
 
 const ensureTarget = () => {
     if (!opts.p && !opts.all) {

@@ -28,11 +28,11 @@
     </van-sticky>
 </template>
 
-<script setup>
+<script setup lang="ts">
 /* eslint-disable vue/require-default-prop */
-import { ref, defineProps } from 'vue';
-import { getUrlParam, isIOS } from '@/utils/tool';
-import native from '@/utils/native';
+import { ref } from 'vue';
+import { getUrlParam, isIOS } from '@skr/act-utils/lib/tool';
+import native from '@skr/act-utils/lib/native';
 // const props = withDefaults(defineProps(), {})
 const props = defineProps({
     title: String,

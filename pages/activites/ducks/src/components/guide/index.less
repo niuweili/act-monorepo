@@ -1,0 +1,178 @@
+.guide {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    overflow: hidden;
+
+    &_bgc {
+        width: 100vw;
+        height: 616px;
+        margin-top: auto;
+        position: relative;
+        background: url('./assets/bgc.png') no-repeat center / 100% 100%;
+
+        &_main {
+            width: 100vw;
+            height: 616px;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            &_loop {
+                width: 110px;
+                height: auto;
+                position: absolute;
+                bottom: 220px;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+
+            &_speed {
+                width: 321px;
+                height: auto;
+                position: absolute;
+                bottom: 107px;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+
+            &_speed {
+                width: 321px;
+                height: 17px;
+                background: url('./assets/speedBgc.png') no-repeat center / 100% 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                bottom: 107px;
+                left: 0;
+                right: 0;
+                margin: auto;
+
+                .content {
+                    width: 317px;
+                    height: 13px;
+                    border-radius: 0 38px 38px 0;
+                    background: linear-gradient(180deg, #43064A 0%, #822D8B 100%);
+                    transform-origin: right;
+                    animation-name: progress-animation;
+                    animation-timing-function: ease-in-out;
+                    animation-fill-mode: forwards;
+                }
+
+                @keyframes progress-animation {
+                    0% {
+                        transform: scaleX(1);
+                    }
+
+                    100% {
+                        transform: scaleX(0);
+                    }
+                }
+            }
+        }
+
+        &_hand4 {
+            width: 42px;
+            height: auto;
+            position: absolute;
+            right: 3px;
+            bottom: 68px;
+            animation: move-up-down4 2s ease-in-out infinite;
+        }
+
+        &_hand5 {
+            width: 47px;
+            height: auto;
+            position: absolute;
+            right: 27px;
+            bottom: 245px;
+            animation: move-up-down5 2s ease-in-out infinite;
+        }
+
+        &_select {
+            width: 80px;
+            height: 19px;
+            position: absolute;
+            bottom: 118px;
+            right: 12px;
+        }
+
+        &_confirm {
+            width: 116px;
+            height: 38px;
+            position: absolute;
+            right: 58px;
+            bottom: 265px;
+        }
+
+        @keyframes move-up-down4 {
+            0% {
+                transform: translateY(0);
+                /* 图片不动 */
+            }
+
+            50% {
+                transform: translateY(-20px);
+                /* 图片向上移动20像素 */
+            }
+
+            100% {
+                transform: translateY(0);
+                /* 图片回到原位 */
+            }
+        }
+
+        @keyframes move-up-down5 {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translate3d(10px, 10px, 10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes jump {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        &_next {
+            width: 133px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 40px;
+            border: 2px solid #FFF;
+            color: #FFF;
+            font-size: 20px;
+            font-weight: 700;
+            position: absolute;
+            bottom: 77px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            animation: jump 1.5s ease-in-out infinite;
+            z-index: 2;
+        }
+    }
+}

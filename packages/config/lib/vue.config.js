@@ -1,14 +1,9 @@
-// const { VantResolver } = require('unplugin-vue-components/resolvers');
 import { VantResolver } from 'unplugin-vue-components/resolvers'
-// const ComponentsPlugin = require('unplugin-vue-components/webpack');
 import ComponentsPlugin from 'unplugin-vue-components/webpack'
-// const AutoImport = require('unplugin-auto-import/webpack').default;
 import AutoImport from 'unplugin-vue-components/webpack'
 import VConsolePlugin from 'vconsole-webpack-plugin'
 import postcssConvert from 'postcss-px-to-viewport-8-plugin'
 import autoprefixer from 'autoprefixer'
-// const VConsolePlugin = require('vconsole-webpack-plugin');
-// const postcssConvert = require('postcss-px-to-viewport');
 
 const env = process.env.envMode || process.env.NODE_ENV;
 
@@ -45,6 +40,10 @@ const chainWebpack = config => {
 };
 
 const configureWebpack = config => {
+    config.plugins.push(
+        //vant按需引入
+        ComponentsPlugin({ resolvers: [VantResolver()] }),
+    )
     // vue api自动导入
     config.plugins.push(
         AutoImport({

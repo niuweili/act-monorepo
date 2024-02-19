@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no, viewport-fit=cover"
+        />
+        <link rel="icon" href="#" />
+        <title><%= htmlWebpackPlugin.options.title %></title>
+    </head>
+    <body>
+        <noscript>
+            <strong>
+                We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without
+                JavaScript enabled. Please enable it to continue.
+            </strong>
+        </noscript>
+        <div id="app"></div>
+        <!-- built files will be auto injected -->
+    </body>
+</html>
+<script>
+    function getUrlParam(name) {
+        return (
+            decodeURIComponent(
+                (new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [
+                    ,
+                    ''
+                ])[1] || ''.replace(/\+/g, '%20')
+            ) || null
+        ); // eslint-disable-line
+    }
+
+    function youmengFunc() {
+        void (function (e, t, n, a, o, i, m) {
+            (e._um_apm_namespace = o),
+                (e[o] =
+                    e[o] ||
+                    function () {
+                        (e[o].q = e[o].q || []).push(arguments);
+                    }),
+                (e[o].l = e[o].l || +new Date()),
+                (i = t.createElement(n)),
+                i.setAttribute('crossorigin', ''),
+                (i.src = a),
+                (m = t.getElementsByTagName(n)[0]),
+                m.parentNode.insertBefore(i, m);
+        })(
+            window,
+            document,
+            'script',
+            'https://g.alicdn.com/jssdk/apm/2.0.9/es5/uapm.iife.js',
+            '_apm'
+        );
+        _apm('create', {
+            pid: '6321827b05844627b548ad3d',
+            pageFilter: { mode: 'ignore', rules: [] }
+        });
+        let userID = getUrlParam('skrId') || getUrlParam('userID');
+        _apm('set', 'puid', userID);
+    }
+    (function () {
+        handleAddListener('load', getTiming);
+
+        function handleAddListener(type, fn) {
+            if (window.addEventListener) {
+                window.addEventListener(type, fn);
+            } else {
+                window.attachEvent('on' + type, fn);
+            }
+        }
+
+        function getTiming() {
+            try {
+                var time = performance.timing;
+
+                var timingObj = {};
+
+                var loadTime = (time.loadEventEnd - time.loadEventStart) / 1000;
+
+                if (loadTime < 0) {
+                    setTimeout(function () {
+                        getTiming();
+                    }, 200);
+
+                    return;
+                }
+
+                timingObj['重定向时间'] = (time.redirectEnd - time.redirectStart) / 1000;
+
+                timingObj['DNS解析时间'] = (time.domainLookupEnd - time.domainLookupStart) / 1000;
+
+                timingObj['TCP完成握手时间'] = (time.connectEnd - time.connectStart) / 1000;
+
+                timingObj['HTTP请求响应完成时间'] = (time.responseEnd - time.requestStart) / 1000;
+
+                timingObj['DOM开始加载前所花费时间'] =
+                    (time.responseEnd - time.navigationStart) / 1000;
+
+                timingObj['DOM加载完成时间'] = (time.domComplete - time.domLoading) / 1000;
+
+                timingObj['DOM结构解析完成时间'] = (time.domInteractive - time.domLoading) / 1000;
+
+                timingObj['脚本加载时间'] =
+                    (time.domContentLoadedEventEnd - time.domContentLoadedEventStart) / 1000;
+
+                timingObj['onload事件时间'] = (time.loadEventEnd - time.loadEventStart) / 1000;
+
+                timingObj['页面完全加载时间'] =
+                    timingObj['重定向时间'] +
+                    timingObj['DNS解析时间'] +
+                    timingObj['TCP完成握手时间'] +
+                    timingObj['HTTP请求响应完成时间'] +
+                    timingObj['DOM结构解析完成时间'] +
+                    timingObj['DOM加载完成时间'];
+
+                // if (timingObj['页面完全加载时间'] < 8 || timingObj['页面完全加载时间'] > 10) {
+                //     console.log('小于1');
+                //     youmengFunc();
+                // }
+                youmengFunc();
+            } catch (e) {
+                console.log('e', e);
+            }
+        }
+    })();
+</script>
+<script>
+    (() => {
+        function block() {
+            let d = getUrlParam('d');
+            if (d == 1) return;
+            if (
+                window.outerHeight - window.innerHeight > 200 ||
+                window.outerWidth - window.innerWidth > 200
+            ) {
+                //刷新
+                while (document.firstChild) {
+                    document.removeChild(document.firstChild);
+                }
+            }
+            setInterval(() => {
+                (function () {
+                    return false;
+                })
+                    ['constructor']('debugger')
+                    ['call']();
+            }, 50);
+        }
+        try {
+            block();
+        } catch (err) {}
+    })();
+</script>

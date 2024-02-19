@@ -1,9 +1,9 @@
 import axios from 'axios';
-import store from '@/store/index';
+// import store from '@/store/index';
 // import { Toast } from 'vant';
 // import 'vant/es/toast/style';
 
-import { getUrlParam } from '../utils/tool';
+import { getUrlParam } from '@skr/act-utils/lib/tool';
 const env = process.env.envMode || process.env.NODE_ENV;
 console.log(env, 'env');
 
@@ -38,7 +38,7 @@ export default function request(options, isShowLoading = true, controlLoading = 
         // request拦截器
         service.interceptors.request.use(
             async (config) => {
-                controlLoading && store.commit('common/updateLoading', isShowLoading);
+                // controlLoading && store.commit('common/updateLoading', isShowLoading);
                 switch (config.method) {
                     case 'get':
                         config.params = config.params; // eslint-disable-line
@@ -52,7 +52,7 @@ export default function request(options, isShowLoading = true, controlLoading = 
                 return config;
             },
             (error) => {
-                store.commit('common/updateLoading', false);
+                // store.commit('common/updateLoading', false);
                 Promise.reject(error);
             } // 请求拦截器的报错处理
         );
@@ -66,11 +66,11 @@ export default function request(options, isShowLoading = true, controlLoading = 
                 } else {
                     reject(res.data);
                 }
-                controlLoading && store.commit('common/updateLoading', false);
+                // controlLoading && store.commit('common/updateLoading', false);
             },
             (error) => {
                 console.log('err' + error);
-                controlLoading && store.commit('common/updateLoading', false);
+                // controlLoading && store.commit('common/updateLoading', false);
                 let { message } = error;
                 if (message == 'Network Error') {
                     message = '网络异常，请检查网络';

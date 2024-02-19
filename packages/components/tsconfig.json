@@ -1,9 +1,10 @@
 {
     "compilerOptions": {
         "declaration": true,
-        "target": "es5",
+        "target": "esnext",
         "outDir": "dist",
-        "sourceMap": false
+        "sourceMap": false,
+        "moduleResolution": "node",
     },
     "include": [
         "src/**/*.ts",

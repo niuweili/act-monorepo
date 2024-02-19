@@ -7,7 +7,8 @@ import Loading from './loading/index.vue'
 import Login from './login/index.vue'
 import LuckstarNum from './luckstar/num.vue'
 import LuckstarPop from './luckstar/pop.vue'
-import ScrollMsg from './scrollmsg/index.vue'
+// TODO:Vue2->Vue3
+// import ScrollMsg from './scrollmsg/index.vue'
 
 export {
     Badge,
@@ -15,8 +16,9 @@ export {
     Header,
     Jiyan,
     List,
+    Login,
     Loading,
     LuckstarNum,
     LuckstarPop,
-    ScrollMsg
+    // ScrollMsg
 }
